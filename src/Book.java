@@ -1,9 +1,14 @@
+/**
+ * Represents a book in the library system.
+ * Each book has a unique identifier, title, author, genre, and availability status.
+ * The book ID is immutable once set.
+ */
 public class Book {
-    private final String bookId; // Made final since it shouldn't change
+    private final String bookId; 
     private String title;
     private String author;
     private String genre;
-    private String availabilityStatus;
+    private String availabilityStatus;// Availability status (Available/Checked Out)
 
     public Book(String bookId, String title, String author, String genre, String availabilityStatus) {
         this.bookId = bookId;

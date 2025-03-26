@@ -34,11 +34,11 @@ public class LibraryApplication {
         while (true) {
             if (scanner.hasNextInt()) {
                 int choice = scanner.nextInt();
-                scanner.nextLine(); // Consume newline
+                scanner.nextLine(); 
                 return choice;
             } else {
                 System.out.println("Invalid input! Please enter a number between 1 and 6.");
-                scanner.next(); // Discard invalid input
+                scanner.next(); 
             }
         }
     }

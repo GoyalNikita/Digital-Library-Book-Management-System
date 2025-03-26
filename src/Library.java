@@ -2,16 +2,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+/**
+ * Library class to manage book operations such as adding, searching,
+ * updating, and deleting books.
+ */
+
 public class Library {
     private final Map<String, Book> bookCollection;
-    private final Scanner scanner; // Injected dependency
+    private final Scanner scanner; 
 
     public Library(Scanner scanner) {
         this.bookCollection = new HashMap<>();
         this.scanner = scanner;
     }
 
-    // Adding a book to the collection
+    /**
+     * Adds a new book to the library collection. Ensures unique book IDs
+     * and validates necessary fields.
+     */
     public void addBook() {
         System.out.println("\nAdding a new book...");
         System.out.print("Enter Book ID: ");
@@ -45,7 +53,8 @@ public class Library {
         }
     }
 
-    // View all books
+    //Displays all books currently in the library collection.
+     
     public void viewAllBooks() {
         if (bookCollection.isEmpty()) {
             System.out.println("\nNo books found.");
@@ -55,7 +64,7 @@ public class Library {
         }
     }
 
-    // Search for a book by ID or title
+    // Searches for a book by ID or title and prints the details if found.
     public void searchBook() {
         System.out.print("Enter Book ID or Title to search: ");
         String searchKey = scanner.nextLine().trim();
@@ -69,7 +78,10 @@ public class Library {
         System.out.println("Book not found.");
     }
 
-    // Update book details
+    /**
+     * Updates an existing book's details such as title, author, genre, or availability status.
+     * Keeps fields unchanged if no input is provided.
+     */
     public void updateBook() {
         System.out.print("Enter Book ID to update: ");
         String bookId = scanner.nextLine().trim();
@@ -104,7 +116,7 @@ public class Library {
         System.out.println("Book updated successfully!");
     }
 
-    // Delete a book
+    // Deletes a book from the library collection using its unique book ID.
     public void deleteBook() {
         System.out.print("Enter Book ID to delete: ");
         String bookId = scanner.nextLine().trim();
